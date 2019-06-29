@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8"/>
+        <script>
+            "use script"
+            console.log(1+7);
+            
+            var cliente = {
+                nome: 'Maria',
+                sobrenome: 'Reis',
+                idade: 35,
+                clienteAtual: false,
+                nomeCompleto: function() {
+                    return this.nome + " " + this.sobrenome; 
+                }
+            }
+            console.log( cliente.nomeCompleto() );
+            
+        </script>
+        
+    </head>
+    <body>
+    <h2>Módulo 03</h2>
+    
+    <aside>
+        <h3> Aula 3.01</h3>
+        <p>Javascript é uma implementação do ECMAScript. Porém possui recursos extras, ocmo DOM, eventos etc.</p>
+        
+        <p>Javascript é usada para escrever trechos de programas em páginas web
+        Programas são sequências de passos para se resolver problemas.</p>
+        
+        <p>Para colocar código javascript em uma página, podemos colocar na seção script, por exemplo:</p>
+        
+        <pre>
+            < scirpt >
+                function ola(){
+                    alert("ola mundo");
+                }
+            < /scirpt >
+        </pre>
+        
+        <p>Pode-se colocar esse script no head e usar o evento onload no body.
+        Podemos colocar um botão e usar o evento onclick e uma série de eventos.
+        O arquivo testes-js.html possui exemplos. Exemplo:</p>
+                
+        
+    </aside>
+    
+    <aside>
+        <h3> Aula 3.02</h3>
+        <p>É possível fazer códigos na console do painel de desenvolvedor dos navegadores. Para tanto é necessário fazer uso do "use strict" nos scripts.</p>
+        
+    </aside>
+    
+    <aside>
+        <h3> Aula 3.03</h3>
+        <h5>Declaração de variáveis </h5>
+        
+        <p>Os nomes de variáveis são case sensitive. Exemplos:</p>
+        
+        <pre>
+        var nome;
+        var Nome;
+        var NOME;
+        </pre>
+        <p>Essas três variáveis são diferentes, por causa das letras maiúsculas e minúsculas.</p>
+        
+        <p>  //comentario de linha </p>
+        <p>  /* comentario de varias linhas */ </p>
+        
+        <p>Se não usar var ou let para declarar variaveis, as variaveis serão globais.</p>
+        
+        <p>Porém, ao colocar "use script" não é possível declarar uma variável deixando de usar var ou let.</p>
+        
+        <p>A variável pode ter seu tipo mudado durante a execução do script, podendo ser boolean, num momento, number em outra e string um pouco depois. Basta atribuir valores destes tipos durante a execução.</p>
+        
+    </aside>
+    
+    <aside>
+        <h3> Aula 3.04</h3>
+        
+        <p>Como já visto, javascript não precisa da declaração de tipo de variável. É tudo var nome_variavel.</p>
+        
+        <p>Exemplos</p>
+        <pre>
+            var a = true;   //boolean
+            var b = 1.5;    //number
+            var c = "João";  //String
+            var d = null;    
+            var e;          //undefined
+        </pre>
+        
+        <p>Pode-se também utilizar símbolos especiais na string. Para testar acesse algum site que mostra os caracterer unicodes e imprima-os na tela.</p>
+        
+        <p>Para imprimir aspas em uma string é simples. Pode ser feito de duas maneiras:
+        
+        <pre>
+            var a = 'Luis Inácio "Lula" da SIlva';
+        </pre>
+        
+        Ao imprimir isso na console, as aspas serão impressas pois o delimitador foi ' '.</p>
+        
+        
+        <p>Algumas funções de String:
+        
+        <pre>
+            var s = "maçã banana laranja";
+            console.log(s.split(' '));
+            console.log(obj.length);
+            console.log(s.trim());
+            console.log(s.indexOf(' '));   ->
+            console.log(s.lastIndexOf(' '));      --> retorna o último espaço em branco      
+        </pre>
+        
+        Isso retorna um vetor separandod ados dessa string por espaço.</p>
+        
+        
+        <p>Exemplo de template literal
+        
+        <pre>
+        var nome = "José";
+        var s = `Olá ${nome. Bem vindo.`
+        concole.log( s );
+        </pre>
+        
+        </p>
+        
+        <p>Vetores</p>
+        <pre>
+        var nomes = ['Maria', 'José', 'Pedro', 'Leticia'];
+        console.log(nomes);  --> imprime tudo        
+        console.log(nomes[0]);  --> imprime índice
+        </pre>
+        
+        <p>O vetor também pode ter tipos de dados diferentes: </p>
+        
+        <pre>
+            var clientes = ['Maria', 35, false]
+        </pre>
+        <p>Ou pode ter uma função:</p>
+        
+        <pre>
+            var cliente = {
+                nome: 'Maria',
+                sobrenome: 'Reis';
+                idade: 35,
+                clienteAtual: false,
+                nomeCompleto: function() {
+                    return this.nome + " " + this.sobrenome; 
+                }
+            }
+            console.log( cliente.nomeCompleto() );
+        </pre>
+        <p>Pode-se fazer inúmeras combinações. Inclusive até vetor dentro de vetor.</p>
+    </aside>
+    
+    <aside>
+        <h3>Aula 3.05</h3>
+        <p> Uma dica para comparar variaveis:</p>
+        
+        <pre>
+        x == "16"; --> Isso compara se há um número ou um texto 16 em x.
+        x ==="16"; --> Isso compara se é estritamente igual, inclusive o tipo.
+        x !=="16"; --> Isso compara se é estritamente diferente.
+        </pre>
+    
+        <p>Funções úteis: instanceof, typeof</p>
+    </aside>
+    
+    <aside>
+        <h3>Aula 3.06</h3>
+        
+        <p>O let (usado para declarar variáveis) restringe o uso da variável ao bloco em que foi declarada. Significa dizer que o var joga a variável para o escopo global enquanto que o let não faz isso.</p>
+        
+        <p>Exemplo de switch case:</p>
+        <pre>
+        
+            var a = 1;
+            switch(a){
+                case 0: 
+                    console.log('zero');
+                    break;
+                case 1: 
+                    console.log('um');
+                    break;
+                case 2: 
+                    console.log('dois');
+                    break;
+                case 3: 
+                    console.log('três');
+                    break;
+                case 4: 
+                    console.log('quatro');
+                    break;
+            }
+           
+        </pre>
+        
+         <p> Esse capítulo trata diversos operadores lógicos, com a execução de exercícios simples de comparação para descobrir números primos etc ..</p>
+        
+    </aside>
+    
+    <aside>
+        <h3>Aula 3.07</h3>
+        
+        <p>Funções</p>
+        
+        <p> Uma função é declarada pela palavra reservada function. Exemplo: </p>
+        
+        <pre>
+        function soma (x,y) {
+            console.log(arguments);
+            switch(arguments.length){
+                case 0: return 0;
+                case 1: return x;
+                case 2: return y;
+            }
+        }
+        
+        console.log(soma(5,2));
+        console.log(soma(3));
+        console.log(soma());
+        console.log(soma(1,2,3,4,5));
+        
+        </pre>
+        
+        <p>Não muda muito se comparado as funções do java. MAs existe outra forma de declarar funções que é por meio de uma expressão. O que é uma expressão? Algo que retorna um valor. Exemplos: </p>
+        
+        <pre>
+        
+        console.log(3);
+        console.log(1+58*3);
+        console.log(a>5*b);
+        console.log( {nome: "João", idade: 35});
+        
+        </pre>
+
+        <p>Todos esses comandos acima são expressões. </p>
+        
+        <p>Uma função é um objeto em javascript.</p>
+        
+        
+        
+    </aside>
+    
+    
+    
+    <aside>
+    
+    <h3>Aula 3.08</h3>
+    
+    <h5>Vetores  / Arrays</h5>
+        
+    </aside>
+    
+    
+    <aside>
+    
+    <h3>Aula 3.09</h3>
+    
+    <h5>Objetos</h5>
+        
+    <p>OS objetos no javascript podem ser declarados diretamente no script, não ncessitando especificar uma no va classe.</p>
+        
+    <p>Exemplos:</p>
+        
+    <pre>
+    var pessoa = {
+        nome: 'joao',
+        sobrenome: 'silva',
+        idade: 35,
+        casado: false,
+        contatos: ['(11)12345-0987', 'email@teste.com'],
+        nomeCompleto: function(){
+            return this.nome+ '' + this.sobrenome;
+        },
+        endereco: {
+            rua: 'Rua 10',
+            numero: 1100
+        }
+
+    }
+
+    // Função construtora
+    function Pessoa (n, s, i){
+        this.nome = n;
+        this.sobrenome = s;
+        this.nomeCompleto = function(){
+            return this.nome + " " + this.sobrenome;
+        };
+        self.idade = i;
+    }
+
+    //Prototipos
+    var pessoa2 = {
+        nome: 'Fulano',
+        sobrenome: 'de Tal'
+    }
+
+    
+    </pre>    
+        
+    <p>getters e setters</p>    
+        
+            
+    </aside>
+    
+    <aside>
+    <h3>Aula 3.10 JSON</h3>
+        
+    <p>JavaScript Object Notation</p>
+        
+    <pre>
+    //JSON
+    {
+        "listaProdutos":[{
+            "código":1,
+            "nome": "produto1",
+            "preço": 120.00
+        }]        
+    }
+        
+    {
+        "listaProdutos":[{
+            "código":2,
+            "nome": "produto2",
+            "preço": 110.00
+        }]        
+    }
+        
+        {
+        "listaProdutos":[{
+            "código":3,
+            "nome": "produto3",
+            "preço": 130.00
+        }]        
+    };
+        
+    </pre>
+        
+    </aside>
+    
+    <aside>
+        <h3>Aula3.11 - Classes</h3>
+        
+        <p> Classes - Syntatical sugar  - Significa que é um agrado para quem está habituado com outras linguagens</p>
+        
+        <pre>
+        class Poligono {
+            constructor(largura, altura){
+                this.largura = largura;
+                this.altura = altura;
+            }
+            get area(){
+                return this.altura*this.largura;
+            }
+        }
+        
+        
+        class Ponto{
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+            }
+            static distancia(a,b){
+                const dx = a.x-b.x;
+                const dx = a.y-b.y;
+                return Math.sqrt(dx*dx + dy*dy);
+            }
+            toString(){
+                return '(' + this.x+','+this.y+')';
+            }
+            const p1 = new Ponto(5,5);
+            const p2 = new Ponto(10,10);
+            console.log(Ponto.distancia(p1,p2));
+        }
+        
+        </pre>
+    </aside>
+    
+    <aside>
+        <h3>Aula 3.12 - Objetos Internos</h3>
+        
+        <p> //NUMBER</p>
+        
+        Temos muitas constantes em Number
+        
+        <pre>
+            Number.MAX_VALUE;
+            Number.MIN_VALUE;
+            Number.EPSILON;
+            Number.parseInt("10");
+            Number.isNaN(Number.parseInt("3"));
+            Number.isNaN(Number.parseInt("x"));
+            
+        </pre>
+        
+        E por aí vai
+        
+     
+        
+        <p>// MATH</p>
+                
+        <pre>
+        Math.pow(2,3);
+        Math.min(3,2,4,3,1);
+        Math.round(3.67);
+        
+        </pre>
+        
+        <p>// DATE</p>
+        
+        <pre>
+        
+
+        var agora = new Date();
+        var natal = new Date(2015,11,25);
+        var reuniao1 = new Date(2016,03,12,11,30,00,00);
+        console.log(agora);
+        console.log(natal);
+        console.log(reuniao1);
+        
+        //formato brasileiro:
+        
+        console.log(reuniao1.toLocaleString());
+        
+        
+        //Pegar dados especificos:
+        
+        console.log(agora.getFullYear());
+        console.log(agora.getDay());
+        console.log(reuniao1.getHours());
+        console.log(reuniao1.getMinutes());
+        
+        </pre>
+        
+        
+        <p>// STRING </p>
+        
+        <pre>
+        var s1 = "Olá Mundo";
+        var s2 = new String ("Olá Mundo");
+        
+        </pre>
+        
+        
+      <p>  // STRING </p>
+        <pre>
+        var s1 = "Olá Mundo";
+        var s2 = new String ("Olá Mundo");
+        
+
+        console.log(s2.indexOf("n"));
+        console.log(s2.startsWith("n"));
+        console.log(s2.toLocaleLowerCase());
+        console.log(s2.substring(-5, 2));
+        
+        </pre>
+            
+        <p>//REGULAR EXPRESSIONS - REGEXp</p>
+        <pre>
+        var reTelefone = /\([0-9]{2}\)[0-9]{4,5}-[0-9]{4}/g;
+
+        var fone1 = "(31)12345-1234";
+        var fone2 = "12345-1234";
+
+        console.log(reTelefone.test(fone1));
+        console.log(reTelefone.test(fone2));
+
+        </pre>
+
+        <p>COLEÇÔES - MAP, SET, WEAKMAP, WEAKSET</p>
+
+        <p>MAP</p>
+        <pre>
+        var veiculos = new Map();
+        veiculos.set("HMG0248", "Honda Civic");
+        veiculos.set("HMG0247", "Toyota Corolla");
+        veiculos.set("HMG0246", "Chevrolet Corsa");
+
+        console.log(veiculos.size);
+
+        console.log(veiculos.get("HMG0248"));
+        console.log(veiculos.get("HMG032324e234"));
+        console.log(veiculos.has("HMG0248"));
+
+        for(var [placa,carro] of veiculos) {
+            console.log(`A placa do ${carro} é ${placa}`);
+        }
+
+        </pre>
+        
+        <p>// SET </p>
+        
+        <pre>
+        
+        var novosVeiculos = new Set();
+        novosVeiculos.add("Honda Civic");
+        novosVeiculos.add("Toyota Corolla");
+        novosVeiculos.add("Fiat Uno");
+        
+        console.log(novosVeiculos.has("Honda Civic"));
+        
+        </pre>
+        
+        <p>// WEAKMAP e WEAKSET</p>
+        <p>São estruturas que só permanecem caso haja referâncias externas a elas.</p>
+        
+    </aside>
+    
+    
+    <aside>
+    <h3>Aula 3.13</h3>
+    
+    <p>Comandos úteis na console (f12)</p>
+    
+    <pre>
+    document   --> Retorna o documento html, exemplo:
+    
+    
+    #document
+    <!doctype html>
+    < html>
+        < head>
+            < title>Javascript< /title>
+            < meta charset="utf-8">
+            < script>
+                function ola(){
+                alert("ola mundo");
+            }
+            < /script>
+            < script>
+                var s = "Ola Mundo";
+                console.log(s);
+            < /script>
+            < link rel="stylesheet" ref="./styles.css">
+        < /head>
+        
+        < body>
+            < aside>
+                < h2>Módulo 03< /h2>
+                < input type="button" onclick value="Olá Mundo">
+            < /aside>
+            
+            < p >Paragrafo 1< /p >
+            < p >Paragrafo 2< /p >
+            < p >Paragrafo 3< /p >
+            < figure>< p>…< /p>< figcaption>Logo do css 3< /figcaption>
+            < p>< /p>< /figure>
+            
+            < script src="./scripts.js">< /script>
+            
+        < /body>
+    < /html>
+
+    
+    </pre>
+    
+    <p> Assim como é possível utilizar comando como child, body.childNodes e ir alterando atributos pela console do navegador.</p>
+    
+    </script>
+        
+    </aside>
+    
+
+    <aside>
+        <h3>Aula 3.14 - Eventos </h3>
+    
+    </aside>
+    
+    
+    
+    <aside>
+        <h3>Aula 3.15 - AJAX </h3>
+        <p>Asynchronous JavaScript and XML (ou JSON)</p>
+        
+    
+    </aside>
+        
+        
+        
+    </body>
+</html>
+

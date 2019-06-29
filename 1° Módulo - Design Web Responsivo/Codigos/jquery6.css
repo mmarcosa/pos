@@ -1,0 +1,9 @@
+#box{
+    width : 150px;
+    height: 150px;
+    background-color: crimson;   
+}
+
+#box, #btn{
+    margin-top: 2em;
+}

@@ -1,0 +1,1276 @@
+<DOCTYPE !html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Módulo 04</title>
+    </head>
+    
+    <body>
+        <aside>
+            <h3>Aula 4.01</h3>
+            <p>Web Design Responsivo é uma forma de design de páginas para a Web que considera o contexto ou ambiente em que as páginas serão apresentadas.</p>
+            
+            <p>Uma media query é um teste do tipo de mídia e, opcionalmente, de uma ou mais características dessa mídia.</p>
+        </aside>
+        
+        <aside>
+            <h3>Aula 4.02</h3>
+            <p></p>
+        </aside>
+        
+        <aside>
+            <h3>Aula 4.03</h3>
+            
+            <p>Janela de visualização (viewport) é a área da tela destinada a apresentação de conteúdo.</p>
+            
+            <p>Nos computadores, a janela de visualização corresponde a área de conteúdo do navegador</p>
+            
+            <p>Nos smartphones, a janela de visualização pode ser maior ou menor que a janela do navegador.</p>
+            
+            <p> Exemplo de ocmo definir a largura para navegadores de smartphones: </p>
+            
+                <pre>
+                    < meta name = "viewport" content = "device-width"> 
+                </pre>
+            
+            <p>Atributos de viewport:</p>
+            
+            <p>width == define a largura do viewport</p>
+            <p>height == define a altura do viewport</p>
+            <p>initial-scale == define a escala inicial, cujo valor default é 0</p>
+            <p>minimum-scale == define o menor valor para a escala, podendo ser entre 0.1 e 10.0</p>
+            <p>maximum-scale == define o maior valor para a escala, podendo ser entre 0.1 e 10.0</p>
+            <p>user-scalable == define se o usuário pode alterar a escala</p>
+            
+        </aside>
+        
+        
+        <aside>
+            <h3>Aula 4.04</h3>
+            
+            <p>Uma media query é uma expressão lógica que testa o tipo de mídia do agente do usuário e, opcionalmente, uma ou mais de suas características.</p>
+            
+            <p>Permite que a apresxentação da página seja ajustada por meio de css.</p>
+            
+            <pre>
+            
+            @media screen{
+                p{
+                    color:#99F;
+                    background-color:#CCC;
+                }
+            }
+            
+            
+            @media print{
+                p{
+                    color:#000;
+                    background-color:#FFF;
+                }
+            }
+            
+            </pre>
+            
+            <p>Parâmetros de uma media query</p>
+            
+            <p>width - indica a largura da janela de visualização</p>
+            
+            <p>height - indica a altura da janela de visualização</p>
+            
+            <p>device-width  - indica a largura da janela do dispositivo</p>
+            
+            <p>device-height  - indica a altura da janela do dispositivo</p>
+            
+            <p>orientation - indica de a navegação é no modo retrato ou paisagem</p>
+            
+            <p>aspect-ratio - indica a razão entre altura e largura da janela</p>
+            
+            <p>monochrome - indica se o dispositivo é monocromárico</p>
+            
+            <p>resolution - indica a resolução da tela (em dpi ou dpcm)</p>
+            
+            <p>Os prefixos min- e max- permitem especificar faixas de valores. Exemplos:</p>
+            <p>min-width largura mínima</p>
+            <p>max-width largura máxima</p>
+            
+            <pre>
+                @media all and (min-width: 600px)
+                
+                @media handheld and (max-width: 240px)
+                
+                @media only and (orientation: landscape)
+                
+            </pre>
+            
+            <p>Exemplos de declarações para diferentes tamanhos:</p>
+            
+            <pre>
+            @media only all and (min-width: 320px){
+                //conjunto de estilo
+            }
+            @media only all and (min-width: 640px){
+                //conjunto de estilo
+            }
+            </pre>
+            
+            <p>No exemplo acima, as regras da próxima faixa incorporam as regras da faixa anterior.</p>
+            
+        </aside>
+        
+        <aside>
+            <h3>Aula 4.05</h3>
+            <p>Web única</p>
+            <p>A mesma informação e os mesmos serviços devem estar disponíveis aos usuários independentemente do dispositivo de acesso que eles usassem, pelo menos enquanto isso fizer sentido.</p>
+            <p>Isso não significa que exatamente a mesma informação e a mesma representação fossem usadas.</p>
+            
+            <p>Layouts fluídos: a apresentação é ajustada a partir da largura da janela de visualização.</p>
+            
+            <p>Melhorias progressivas: o layout é elaborado para dispositivos mais simples e melhorado para dispositivos mais complexos.</p>
+            
+            <p>Layout fluído: as dimensões dos elementos são calculadas a partir das dimensões da janela de visualização</p>
+            
+            <p>Layout adaptativo: os elementos são determinados a partir dos recursos e das características dos dispositivos</p>
+            
+            <h5>Técnicas de layout adaptativo</h5>
+            
+            <p>Detecção de recurso: teste no navegador, de quais recursos estão disponíveis. Recurso: Modernizr</p>
+            
+            <p>Detecção de dispositivos: identificação de qual dispositivo (e navegador) está sendo usado pelo usuário. Recurso: User Agent String </p>
+            
+            <p>Nada impede que essas técnicas sejam combinadas.</p>
+            
+        </aside>
+        
+        <aside>
+            <h3>Aula 4.06</h3>
+            <p>Modernizr</p>
+            <p>Um dos principais recursos para desenvolvimento responsivo. É uma pquena biblioteca em javascript para detectar quais recuross da HTML5 e da CSS3 estão disponíveis no navegador. http://modernizr.com</p>
+            
+            
+            <p>A inclusão deve ser feita como qualquer outro arquivo .js </p>
+            
+            <p>Também permite a inclusão de uma nova classe para cada recurso testado.</p>
+        
+            
+            <p>Polyfills: scripts que implementam recursos não disponíveis de forma nativa no navegador Sua carga não deve ser feita no cabeçalho, e sim através do método Modernizr.load{..}</p>
+        </aside>
+        
+        <aside>
+            <h3>Aula 4.07</h3>
+            <h5>User Agent String</h5>
+            <p>A User Agent String é a assinatura do agente do 
+            usuário (ex.: navegador)</p>
+            <p>Cada versão, em cada dispositivo, de cada agente do usuário possui uma User Agent String diferente</p>
+            
+            <p>Essa assinatura faz parte do protocolo HTTP</p>
+            
+            <p>Exemplod de ahente de usuário:</p>
+            <ul>
+                <li>Navegadores</li>
+                <li>Programas de email</li>
+                <li>Web Services</li>
+                <li>Agregadores RSS</li>
+                <li>Máquna de busca</li>
+            </ul>
+            
+            <p>Veja uma extensa lista em: http://useragentstring.com/</p>
+            
+            
+            <p> Estratégias de detecção: </p>
+            <ul>
+                <li>1. Pesquisar por termmos na User Agent String (mobile, mobi, iphone etc)</li>
+                <li>2. Consultar um Device Description Repository(WURFL)</li>
+            </ul>
+        </aside>
+        
+        <aside>
+            <h3>Aula 4.08</h3>
+            <p>Adaptação do lado servidor</p>
+            <p>Usar o script MobileDetect.php, disponível em: http://mobiledetect.net</p>
+            
+            <p>Esse script serve para detecção de dispositivos do lado do servidor baseado na abordagem RESS</p>
+            
+            <p>RESS: responsive web design with server side components</p>
+            
+            
+        </aside>
+        
+        
+        <aside>
+            <h3>Aula 4.09 - Bootstrap</h3>
+            
+            <p>Bootstrap é um framework responsivos. Nada mais é do que um conjunto de código em css, html e javascript que gerenciam layout e garantem que as páginas serão automaticamente adaptadas aos diferentes contextos de navegação.</p>
+            <p>Bootstrap necessita do jquery para funcionar.</p>
+            <p>Pode ser usado localmente, via get bootstrap ou via CDN.</p>
+            <p>Tanto o jquery quanto o bootstrap são colocados apenas no final da página, para evitar que a página demore a carregar.</p>
+            
+            
+        </aside>
+        
+        <aside>
+            <h3>Aula 4.10</h3>
+            
+            <p>No bootstrap os layouts responsivos são construídos a partir das media queryes.   </p>
+            
+            <ul>
+                Pode ser usado de duas formas:
+                <li>Layout fixo;</li>    
+                <li>Layout fluído;</li>
+            </ul>
+            
+              <p>  A escolha é feita através das classes <b>container</b> e <b>container-fluid</b> no elemento div.
+                
+                Uma informação importante é: um container não pode ser aceito dentro de outro container. </p>
+                
+                <ul>
+                    Tamanhos de dispositivos:
+                    <li>xs -> extra small;</li>
+                    <li>sn -> small</li>
+                    <li>md -> median</li>
+                    <li>lg -> large</li>
+                </ul>
+                
+                
+                
+         
+
+        </aside>
+        
+    
+    <aside>
+        <h3> Aula 4.11</h3>
+        
+        <p>Algumas classes de formatação:</p>
+        
+        <p><b>inline:</b> rótulo incorporado ao campo</p>
+        <p><b>input-group-addon:</b> em linha</p>
+        <p><b>form-horizontal:</b> alinha o formulário horizontalmente</p>
+        <p><b>btn-primary:</b> troca a cor do botão para uma cor primária do bootstrap</p>
+    </aside>
+    
+    <aside>
+        <h3>Aula 4.12</h3>
+        
+        <p>O framework Bootstrap oferece vários recursos e componentes que são conhecidos como padrões de projetos para interface. <br/>
+            <br />
+            <b>Glyphicons:</b> conjunto d eicones que podem ser usados em qualquer lugar das paginas, por meio de elementos span nos botões. <br />
+            <br/>
+        
+            <b>button-groups:</b> a principal característica é uma conexão visual entre botões  <br/>
+            <br/>
+            
+            <b>button-dropdowns:</b> botão com menu
+            <br/>
+            <br/>
+            <b>Jombotron:</b> painel com fundo cinza em que as fontes do c são maiores
+            <br/>
+            <br/>
+            <b>Thumbnails:</b> encaixar objetos com texto
+            <br/>
+            <br/>
+            
+            <b>Media object:</b> encaixar objetos com texto
+            <br/>
+            <br/>
+            
+            <b>Progess bar e progress:</b> progress cria o fundo da barra, progress-bar cria o preenchimento da barra.
+            <br/>
+            <br/>
+            <b>Alerts:</b> cria alertas na página html
+            </p>
+    </aside>
+    
+    <aside>
+        <h3> Aula 4.13 - Foundation</h3>
+        <p>
+            O foundation também é um framework responsivo.
+        </p>
+        
+        <p>Está mais focado em aparelhos de alta resolução, tanto que possui um tamanho extra extra large</p>
+        
+        <p>Componentes: </p>
+        
+        <p><b>Magellan: </b> barra de links que fica presente na tela e indica a sessão </p>
+        <br/>
+        <br/>
+        
+         <p><b>Off-canvas: </b> parece com uma gaveta que fica no lado da página e se abre com o clique em um botão. </p>
+        <br/>
+        <br/>
+        
+        <b>Principais framewors responsivos:</b>
+        <br/>
+        
+        <ul>
+            <li> <a href="https://gumbyframework.com/" target="_blank">Gumby</a></li>
+            <li> <a href="https://html5boilerplate.com/" target="_blank">Boilerplate</a></li>
+            <li> <a href="http://www.yaml.de/" target="_blank">Yaml</a></li>
+            <li> <a href="https://unsemantic.com/" target="_blank">Unsemantic</a></li>
+            <li> <a href="http://getskeleton.com/" target="_blank">Skeleton</a></li>
+            <li> <a href="https://purecss.io" target="_blank">Pure</a></li>
+            <li> <a href="https://tuktuk.tapquo.com/" target="_blank">Tuk Tuk</a></li>
+            <li> <a href="https://groundworkcss.github.io/" target="_blank">Groundworkcss</a></li>
+            <li> <a href="https://imperavi.com/kube/" target="_blank">Kube</a></li>
+        </ul>
+    </aside>
+    
+    <aside>
+        <h3>Aula 4.14</h3>
+        <p>A sessão javascript do componente bootstrap mostra algumas coisas a mais.</p>
+        
+        <p><b>Janelas modais: </b>janelas usadas para apresentar dados, recoler dados etc.</p>
+
+        <p><b>Menu drop-down: </b> Pode ser usado em botões, barra de navegação</p>
+        
+         <p><b>Scroll spy: </b>Atualiza uma barra de navegação a partir de um conteúdo. Ao se deparar com muitos dados, a lista se move dentro de um scroll-spy sem mover a tela inteira</p>
+
+        
+        <p><b>Usage: </b>Controla a apresentação de paineis</p>
+        
+        <p><b>Tool-tip: </b>permite colocar ma pequena dica em elementos da página html</p>
+        <p><b>Poppover: </b> permite uma informação mais completa do que o tool-tip</p>
+        
+        <p><b>Collapse: </b>Paineis que podem ser contraídos  e expandidos, muitas vezes conhecidos como acordeões</p>
+
+        <p><b>Caroussel: </b> permite criar uma apresentação legal para imagens</p>
+
+    </aside>
+    
+    <aside>
+        <h3>Aula 4.15 - jQuery</h3>    
+        
+        <p>jQuery é uma boblioteca JavaScript que simplifica o percurso de um documento HTML, o gerenciamento de eventos, as animações e as interações Ajax para o desenvolvimento de aplicações web.</p>
+        
+        <p>Benefícios: </p>
+            
+        Acelera o processo de desenvolvimento; <br/>
+        Compatível com todos os navegadores; <br/>
+        Extendível através de plugins; <br/>
+        
+        
+    </aside>
+    
+        <aside>
+        <h3>Aula 4.16</h3>    
+        
+        <p> Pegar elemento pelo tipo:</p>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('h1').css('background-color', 'grey');
+        });
+        </pre>
+            
+        
+        <p> Pegar elemento pela ordem do tipo:</p>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('#p2').css('background-color', 'grey');
+        });
+        </pre>
+         
+        <p> Pegar elemento pelo id:</p>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('[id="p2"]').css('background-color', 'grey');
+        });
+        </pre>
+        
+        <p> Pegar elemento pelo id:</p>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('p:nth-of-type(1)').css('background-color', 'grey');
+        });
+        </pre>
+        
+        <p>Existem diversas opções para pegar os elementos (também conhecidos como seletores css)..</p>
+        
+        <p> Mudar css em manipuladores de eventos:</p>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+
+            $('#btn1').click(function(){
+                $('p.para').css('background-color', '#5CBB5C');
+            });
+
+            $('#btn2').click(function(){
+                $('p.para').css('background-color', '#d9534F');    
+            });
+        });
+        </pre>
+        
+        <p> Mudar css em manipuladores de eventos:</p>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                $('p.para').each(function(i){
+                    if(i%2==0)
+                        $(this).css('background-color','#5CBB5C');
+                    else
+                        $(this).css('background-color','green');
+                }) ;
+            });
+        });
+
+        </pre>
+            
+        <br/>
+        <br/>
+        <br/>
+        
+        
+    </aside>
+    
+    <aside>
+        <h1> Seletores</h1>    
+        
+        <p> Seletores de formulários</p>
+        
+        <ul>
+            <li>:input</li>
+            <li>:text</li>
+            <li>:password</li>
+            <li>:radio</li>
+            <li>:checkbox</li>
+            <li>:file</li>
+            <li>:image</li>
+            <li>:button</li>
+            <li>:submit</li>
+            <li>:reset</li>
+        </ul>
+        
+        <p>Seletores baseados em conteúdo</p>
+        <ul>
+            <li>:empty --> Seleciona elementos vazios</li>
+            <li>:parent --> Seleciona os elementos que possuem algum conteúdo</li>
+            <li>:has(E) --> Seleciona os elementos que possuem o conteúdo texto, mesmo que entre os descendentes</li>
+            <li>:contains(E) --> Seleciona os elementos que possuem o conteúdo texto, mesmo que entre os descendentes</li>
+            <li>:header --> Seleciona os elementos de título (h1, h2, ...) NÃO INCLUI O EMELENTO HEADER</li>
+        </ul>
+        
+        <p>Exemplo:</p>
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('tr.contains("Ásia")').css('background-color', 'grey');
+        });
+        </pre>
+        
+        <p>Seletores especiais da jQuery:</p>
+        
+        <ul>
+            <li>:first --> primeiro do conjunto resposta</li>
+            <li>:last -- > último do conjnto resposta</li>
+            <li>:odd --> Seleciona os ímpares</li>
+            <li>:even --> Seleciona os pares</li>
+            <li>:eq(n) --> Seleciona os elementos com índices n</li>
+            <li>:lt(n) --> Seleciona os elementos com índice menos que n</li>
+            <li>:gt(n) --> Seleciona os elementos com índice maior que n</li>
+        </ul>
+        
+        
+    </aside>
+    
+    <aside>
+        <h1>Aula 4.18 - Manipulação do documento</h1> 
+        <p>Operações que podem ser realizadas com elementos:</p>
+        
+        <ul>
+            <li>html() --> recupera o conteúdp html de um elemento</li>
+            <li>html(valor) --> define (atribui) o conteúdo html de um elemento</li>
+            <li>text() --> recupera o conteúdp textual de um elemento</li>
+            <li>text(valor) --> define (atribui) o conteúdo textual de um elemento</li>
+            <li>val() --> retorna o valor do campo do formulário</li>
+            <li>val(valor) --> estabelece o valor para o campo de formulário</li>
+        </ul>
+        
+        <p>Gerar html a partir de um click:</p>
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+           $('#btn1').click(function(){
+               $('#resultado').html("Olá mundo!")
+           });
+
+        });
+        </pre>
+        
+        
+        <p>Extrair valor de inputs para colocar em outro lugar: </p>
+        
+        <pre>
+        $('#btn1').click(function(){    
+            $('#resultado').html($('#nome').val());
+        });    
+        </pre>
+        
+        
+        <p>Inserções:</p>
+        
+        <ul>
+            <li>$(str) --> Novo elemento</li>
+            <li>prepend() --> Insere conteúdo como o primeiro filho do elemento</li>
+            <li>append() --> Insere conteúdo como o último filho do elemento</li>
+            <li>before() --> Insere conteúdo após o elemento</li>
+            <li>after() --> Insere conteúdo após o elemento</li>
+            <li>prependTo() --> Insere conteúdo como o primeiro filho do elemento indicado</li>
+            <li>appendTo() --> Insere conteúdo como o último filho do elemento indicado</li>
+            <li>insertBefore() --> Insere conteúdo antes do elemento indicado (como irmão)</li>
+            <li>insertAfter() --> Insere conteúdo após o elemento indicado (como irmão)</li>
+        </ul>
+        
+        
+    </aside>
+        
+    <aside>
+        <h1>Aula 4.19</h1>    
+        <p> Exemplo com append:</p>    
+    
+    <pre>
+    $('#btn1').click(function(){        
+        var novoElemento = $('(colocar tag)Novo Parágrafo (colocar tag)');        
+        $('#resultado').append(novoElemento);
+    });
+    </pre>
+    
+    <p>O append adiciona conteúdo como filho do elemento, no exemplo acima o paragrafo é um filho de div. After parece ter o mesmo sentido, mas coloca coisas após a div empurrando eventuais outras coisas para frente. </p>
+    
+    
+        <p>Alterar os atributos:</p>
+        
+        <pre>
+        "use sctrict";
+        var n = 0;
+        $(document).ready(function(){
+            $('#btn1').click(function(){        
+
+                $('#nome').attr('value','João');
+
+                $('#resultado').html(
+                '< p>val: ' +$('#nome').val()+'< /p>' +
+                '< p>attr: ' +$('#nome').attr('value')+'< /p>' +
+                '< p>prop: ' +$('#nome').prop('value')+'< /p>'
+                )
+
+            });
+        });
+        
+        </pre>
+        
+        <p>Alterar as propriedades:</p>
+        
+        <pre>
+        "use sctrict";
+        var n = 0;
+        $(document).ready(function(){
+            $('#btn1').click(function(){        
+
+                $('#nome').html('value','João');
+
+                $('#resultado').html(
+                '< p>val: ' +$('#nome').val()+'< /p>' +
+                '< p>attr: ' +$('#nome').attr('value')+'< /p>' +
+                '< p>prop: ' +$('#nome').prop('value')+'< /p>'
+                )
+
+            });
+        });
+        
+        </pre>
+        
+        <p>Basta trocar de attr para html. A diferença é que no primeiro o objeto seria alterado e no segundo o documento inteiro.</p>
+        
+        <p>Exclusões</p>
+        
+        <ul>
+            <li>remove() --> Remove o elemento selecionado</li>
+            <li>empty() --> Remove o conteúdo do elemento selecionado</li>
+            <li>removeAttr(attr) --> Remove um atributo do elemento</li>
+            <li>removeProp(prop) --> Remove uma propriedade do elemento</li>
+        </ul>
+        
+        <p>remove retira o elemento do objeto, empty esvazia ..</p>
+        
+        <p>Ex:</p>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('#btn1').click(function(){        
+                $('#p3').remove();
+            });
+        });
+        </pre>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('#btn1').click(function(){        
+                $('#p3').empty();
+            });
+        });
+        </pre>
+        
+        <p>Substituições</p>
+        <ul>
+            <li>replaceWith(conteudo) --> Substitui o conteúdo dos elementos selecionados, pelo conteúdo passado como parâmetro.</li>
+            <li>replaceAll(E) --> Aplica o conteúdo do elemento selecionado a todos que satisfizerem o seletor E.</li>
+        </ul>
+                
+        <p>Exemplo replaceWith:</p>
+        <pre>
+            "use sctrict";
+            $(document).ready(function(){
+                $('#btn1').click(function(){        
+                    $('#p3').replaceWith($('< p/>',{
+                        class:'texto',
+                        html: 'Teste do replaceWith'
+                    }));
+
+                });
+            });
+        </pre>
+        
+        <p>Exemplo replaceAll:</p>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('#btn1').click(function(){        
+                $('<p>Teste do replace All</p>').replaceAll($('#p2'));
+            });
+        });
+        </pre>
+        
+        <p>Embrulho</p>
+        <ul>
+            <li>wrap --> Cria um elemento pai E para cada elemento que satisfaz o seletor</li>
+            <li>wrapAll(E) --> Cria um elemento pai E para o conjunto de elementos que satisfazem o seletor. Se eles estiverem separados, então serão movidos dentro do documento para ficarem agrupados (junto com o primeiro).</li>
+            <li>wrapInner(E) --> Envolve o conteúdo de cada elemento que satisfaça ao seletor usando o elemento E.</li>
+            <li>unrap() --> Remove o elemento pai, mantendo os elementos selecionados em seus lugares.</li>
+        </ul>
+        
+        
+        <p>Exemplos:</p>
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('#btn1').click(function(){        
+                $('.texto').wrap('< div>');
+            });
+        });
+        </pre>
+        
+        
+        <p>Classes:</p>
+        
+        <ul>
+            <li>addClass() --> Adiciona uma classe ao elemento</li>
+            <li>hasClass() --> Testa se o elemento possui uma determinada classe</li>
+            <li>removeClass() --> Remove uma classe do elemento</li>
+            <li>toggleClass() --> Adiciona a classe se o elemento não a tiver ou retira a classe se o eleemento já  a tiver</li>
+        </ul>
+        
+        <p>Exemplos: </p>
+        
+    </aside>
+    
+    <aside>
+        <h1>Aula 4.20</h1>
+        
+        <p>Filtros de conteúdo</p>
+        
+        <ul>
+            <li>filter() --> Reduz o conjunto para aqueles que atendem a um seletor ou passem em uma função de teste</li>
+            <li>is() --> Testa de pelo menos um objeto atende ao seletor e, nesse caso, retorna verdadeiro. Não retorna outro conjunto.</li>
+            <li>not() --> Elimina do conjunto os elementos que se enquadrem no segundo seletor</li>
+            <li>has() --> Reduz o conjunto àqueles elementos que possuam um determinado descendente.</li>
+            <li>map() --> Transforma o conjunto em um outro objeto contendo novos valores</li>
+        </ul>
+        
+        <p>Exemplos:</p>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('p')
+                .filter('p')
+                .not('#p2')
+                .css('background-color','yellow');
+        });
+        </pre>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('p').each(function(){
+                if($(this).is('.texto'))
+                    $(this).css('background-color', 'yellow');
+            });
+        });
+        </pre>
+        
+        
+        <p>Coleções:</p>
+        
+        <ul>
+            <li>get() --> retorna um vetor com os elementos selecionados ou apenas um se um índice for especificado</li>
+            <li>retorna a posição do primeiro elemento do conjunto em relação a seus irmãos no documento. Se um seletor for passado, então o valor de retorno será a posição desse elemento no primeiro conjunto resposta. </li>
+            <li>retorna um vetor com os elementos selecionados</li>
+        </ul>
+        
+        <pre>
+        
+                "use sctrict";
+        $(document).ready(function(){
+            var lista = $('p').map(function(){
+                return $(this).attr('id');    
+            }).toArray().join(' ,');
+
+            console.dir(lista);
+
+            $('#resultado').html(lista);
+        });
+        </pre>        
+        
+        <p>Filtros de posição:</p>
+        
+        <ul>
+            <li>eq() --> reduz o conjunto para apenas um elemento do índice especificado</li>
+            <li>first() --> reduz o conjunto ao seu primeiro elemento</li>
+            <li>last() --> reduz o consujnto ao seu último elemento</li>
+            <li>slice() --> reduz o conjunto a um subconjunto especificado por uma faixa de índices</li>
+            
+            
+        </ul>
+        
+        <p>Exemplos:</p>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('p')
+                .filter('.texto')
+                .last()
+                .css('background-color', 'yellow');
+        });
+        </pre>
+        
+        <pre>
+        "use sctrict";
+        $(document).ready(function(){
+            $('p')
+            .slice(2,4)
+            .css('background-color', 'yellow');
+        });
+        </pre>
+        
+        <p>Filtros de hierarquia:</p>
+        <ul>
+            <li>parent() --> retorna os pais de cada elemento</li>
+            <li>parents() --> retorna todos os ancestrais de cada elemento</li>
+            <li>parentsUntil() --> retorna os ancestrais de um elemento até que o elemento especificado seja encontrado</li>
+            <li>closest() --> para cada elemento do conjutno, encontra um ancestral que atenda ao seletor</li>
+            <li>offsetParent() --> retorna o ancestral mais próximo que tenha sido reposicionado no fluxo do documento (por meio da propriedade position da CSS)</li>
+            <li>children() --> retorna os filhos de cada elemento</li>
+            <li>find() --> retorna os descendentes de cada elemento que atendam a um seletor</li>
+            <li>siblings() --> retorna os irmãos de cada elemento</li>
+            <li>next() --> próximo irmão de um tipo</li>
+            <li>nextAll() --> retorna so próximos irmãos, ocasionalmente filtrados por um seletor</li>
+            <li>nextUntil() --> retorna os irmãos até que um atenda ao seletor</li>
+            <li>prev() --> retorna o irmão imediatamente anterior</li>
+            <li>prevAll() --> retorna os irmãos anteriores</li>
+            <li>retorna os irmãos anteriores, até que um atenda ao seletor</li>
+        </ul>
+        
+        <p>Outros filtros</p>
+        
+        <ul>
+            <li>add() --> adiciona os elementos especificados pelo seletor ao conjunto atual</li>
+            <li>adiciona os últimos elementos filtrados ao conjunto original de elementos</li>
+            <li>contents() --> retorna todos os filhos, incluindo os nodos texto e de comentário</li>
+            <li>end() --> encerra a operação de filtragem e retorna ao conjunto anterior de elementos</li>
+        </ul>
+        
+    </aside>
+
+
+    <aside>
+        <h1>Aula 4.21 - Eventos </h1>
+        
+        <p>Eventos de click de mouse</p>
+        
+        <ul>
+            <li>click() --> clique do mouse sobre o elemento</li>
+            <li>dbclick() --> duplo clique do mouse sobre o elemento</li>
+            <li>mousedown() --> botão do mouse é pressionado sobre o elemento</li>
+            <li>mouseup() --> botão do mouse é solto sobre o elemento</li>
+            <li>contextmenu() --> clkique com o botão direito do mouse</li> 
+        </ul>
+        
+        <p>Exemplos:</p>
+        
+        <pre>
+        "use strict"
+
+        $(document).ready(function(){
+
+            $('#box').click(function(){
+              mensagem('Clique'); 
+            });
+
+            $('#box').dblclick(function(){
+              mensagem('Duplo Clique'); 
+            });
+
+        });
+
+        function mensagem(str){
+            console.log(str);
+            $('#resultados').append('< p>' + str +'< /p>');
+        }
+        </pre>
+        
+        <p>Existe um método chamado preventDefault() que inibe a execução de operações padrão no navegador.</p>
+        
+        <p>Encadeamento dos métodos, aplicados ao mesmo elemento:</p>
+        
+        <pre>
+        $(document).ready(function(){
+
+            $('#box').click(function(){
+              mensagem('Clique'); 
+            })
+            .dblclick(function(){
+              mensagem('Duplo Clique'); 
+            })
+            .contextmenu(function(e){
+                e.preventDefault();
+                mensagem('Botão direito clicado');
+            })
+            .mouseover(function(e){
+                mensagem('mouseover: ' + e.target.id);
+            })
+            .mouseenter(function(){
+                mensagem('mouseenter');
+            })
+            .mouseout(function(e){
+                mensagem('mouseout: ' + e.target.id);
+            })
+            .mouseleave(function(e){
+                mensagem('mouseleave: ' + e.target.id);
+            })
+            .mousemove(function(e){
+                console.dir(e);
+                $('#box').html('(' + e.pageX + ', ' + e.pageY + ')')
+            });
+
+            $('#limpar').click( function(){
+                $('#resultados').empty();
+            })
+
+        });
+
+        </pre>
+        
+        <p>Eventos de teclado:</p>
+        
+        <ul>
+            <li>keypress() --> tecla do teclado foi pressionada e solta com o elemento em foco</li>
+            <li>keydown() --> Tecla do teclado foi pressionada com o elemento em foco. Inclui teclas como shift, esc e control</li>
+            <li>keyup() --> tecla do teclado foi solta ocm o elemento em foco</li>
+            
+            
+        </ul>
+        
+        <p>Exemplos:</p>
+        
+        <pre>
+        $('#nome').keypress(function(e){
+            console.dir(e);
+            mensagem('Tecla pressionada: ' + String.fromCharCode(e.which));
+        });
+        </pre>
+        
+        <p>Eventos de formulário</p>
+        
+        <ul>
+            <li>focus() --> o campo do formulário (ou link) recebeu o foco</li>
+            <li>blur() --> o campo do formulário (ou link) perdeu o foco</li>
+            <li>focusin() --> o elemento ou algum descendente dele recebeu o foco</li>
+            <li>focusout() --> o elemento ou algum descendente dele perdeu o foco</li>
+            <li>change() --> o valor do campo input, textarea ou select foi alterado</li>
+            <li>select() --> o valor fez alguma seleção de texto em um campo input do tipo texto ou em um campo textarea</li>
+            <li>submit() --> o usuário tentou enviar o formulário</li>
+        </ul>
+        
+        
+    </aside>
+    
+    
+    <aside> 
+        <h1>Aula 4.22</h1>
+        
+        <p> Dimensões</p>
+        <ul>
+            <li>width() --> Recupera a largura do elemento em pixels (somente conteúdo)</li>
+            <li>width(valor) --> Recupera a largura do elemento (somente conteúdo)</li>
+            <li>innerWidth() --> recupera a largura do elemento (conteudo e padding)</li>
+            <li>innerWidth(valor) --> define a largura do elemento (conteudo e padding)</li>
+            <li>outerWidth(margen) --> recupera a largura do elemento (conteúdo, padding e borda). Se o parâmetro margem for true, então inclui a margem externa também</li>
+            <li>outerWidth(valor) --> define a largura do elemento (conteudo, padding e borda) </li>
+            
+            <li>height() --> Recupera a altura do elemento em pixels (somente conteúdo)</li>
+            <li>height(valor) --> Recupera a altura do elemento (somente conteúdo)</li>
+            <li>innerheight() --> recupera a altura do elemento (conteudo e padding)</li>
+            <li>innerheight(valor) --> define a altura do elemento (conteudo e padding)</li>
+            <li>outerheight(margen) --> recupera a altura do elemento (conteúdo, padding e borda). Se o parâmetro margem for true, então inclui a margem externa também</li>
+            <li>outerheight(valor) --> define a altura do elemento (conteudo, padding e borda) </li>
+            
+        </ul>
+    
+        <p>Exemplos:</p>
+        
+        <pre>
+        (document).ready(function(){
+            $('#btn').width(200);
+        });
+        </pre>    
+    
+        
+        <ul>
+            <li>position() --> retorna as distancias esquerda (left) e superior (top) do canto esquerdo superior do elemento pai</li>
+            <li>offset() --> retorna as distancias esquerda (left) e superior (top) do canto esquerdo superior do documento</li>
+            <li>scrollLeft() --> retorna a posição da barra de rolagem horizontal do elemento</li>
+            <li>scrollTop() --> retorna a posição da barra de rolagem vertical</li>
+        </ul>
+    
+    
+    </aside>
+    
+    
+    <aside>
+        <h1>Aula 4.23</h1>
+        <p>Animações</p>
+        <ul>
+            <li>hide() --> esconde os elementos selecionados</li>
+            <li>show() --> mostra os elementos selecionados</li>
+            <li>toggle() --> altera a visibilidade dos elementos selecionados</li>
+        </ul>
+        
+        
+        <p>Exemplos:</p>
+        
+        <pre>
+        "use strict"
+        $(document).ready(function(){
+
+            $('#btnshow').click(function(){
+                $('#box').show('fast'); //200 milissegundos
+            });
+
+            $('#btnhide').click(function(){
+                $('#box').hide('slow'); //600 milissegundos
+            });
+
+            $('#btntoggle').click(function(){
+                $('#box').toggle(2000);
+            });
+        });
+
+        </pre>
+        
+        <p>Efeitos -- esses mexem apenas na opacidade</p>
+        <ul>
+            <li>fadeOut() --> torna os elementos selecionados transparentes</li>
+            <li>fadeIn() --> torna os elementos selecionaods opacos</li>
+            <li>fadeToggle() --> inverte a transparência/opacidade dos elementos selecionados</li>
+            <li>fadeTo() --> ajusta a opacidade dos elementos selecionaods para um determinado percentual</li>
+        </ul>
+        
+        
+        <p>Exemplo:</p>
+        <pre>
+        "use strict"
+        $(document).ready(function(){
+
+            $('#btnshow').click(function(){
+                $('#box').fadeIn(5000, 'linear'); //200 milissegundos
+            });
+
+            $('#btnhide').click(function(){
+                $('#box').fadeOut(2000, 'swing'); //600 milissegundos
+            });
+
+            $('#btntoggle').click(function(){
+                $('#box').fadeToggle(2000);
+            });
+
+
+        });
+        
+        </pre>
+        
+        
+        
+        <p>Efeitos -- esses mexem apenas na altura</p>
+        <ul>
+            <li>slideUp() --> reduz a altura dos elementos até escondê-los</li>
+            <li>slideDown() --> restaura a altura opriginal dos elementos</li>
+            <li>slideToggle() --> mostra ou esconde os elementos por meio do ajuste de altura</li>
+        </ul>
+        
+        <pre>
+        "use strict"
+        $(document).ready(function(){
+
+            $('#btnshow').click(function(){
+                $('#box').slideDown(5000, 'linear'); //200 milissegundos
+            });
+
+            $('#btnhide').click(function(){
+                $('#box').slideUp(2000, 'swing'); //600 milissegundos
+            });
+
+            $('#btntoggle').click(function(){
+                $('#box').slideToggle(2000);
+            });
+
+        });
+        </pre>
+        
+        <p>Controle de animação</p>
+        <ul>
+            <li>animate() --> Animação personalizada por meio das propriedades CSS</li>
+            <li>delay() --> estabelece uma pausa no intervalo entre duas animações</li>
+            <li>stop() --> interrompe a animação que estiver rodando e passa à próxima da fila</li>
+            <li>finish() --> interrompe todas as animações e aplica a formatação final</li>
+        </ul>
+                
+    </aside>
+    
+    <aside>
+        <h1> Aula 4.24 Ajax</h1>
+        
+        <p>$.get() Requisição de páginas e dados</p>
+        
+        <p>Respostas:</p>
+        
+        <ul>
+            <li>.done()  --> Requisição bem,-sucedida</li>
+            <li>.fail()  --> Requisição malsucedida</li>
+            <li>.always() --> sempre</li>
+        </ul>
+        
+        <p>Exemplo de uso:</p>
+        
+        <pre>
+        "use strict";
+        $(document).ready(function(){
+
+            $('#btn').click(function(){
+               $.get('pagina.html', function(dados){
+                   $('#resultados').html(dados); 
+                })
+                .done(function(){
+                   console.log('feito')
+                })
+                .fail(function(){
+                   console.log('falhou')
+                })
+                .always(function(){
+                   console.log('sempre')
+                })
+            });
+
+        });
+        </pre>
+        
+        <p>Outra opção é usar o método load()</p>
+        
+        Exemplo:
+        
+        <pre>
+            "use strict";
+            $(document).ready(function(){
+
+                $('#btn').click(function(){
+                    $('#resultados').load('pagina.html');
+                });
+
+            });
+        </pre>
+    
+       <p>Pegando dados de arquivo json</p>
+        
+        <pre>
+            "use strict";
+            $(document).ready(function(){
+
+                $('#btn').click(function(){
+
+                    $.getJSON('dados.json', function(user){
+                       $('#resultados').html(
+                       '< dl>' + 
+                            '< dt>Usuário:< /dt>< dd>' + user.usuario +  '< /dd>' + 
+                            '< dt>Senha:< /dt>< dd>' + user.senha + '< /dd>< /dl>'
+                        );
+
+                    });
+                });
+
+            });
+
+        </pre>
+    
+    
+    <p>Pegando dados de script</p>
+    
+    <pre>
+        "use strict";
+        $(document).ready(function(){
+
+            $('#btn').click(function(){
+
+                $.getScript('script.js', function(){
+
+                    executa();
+
+                });
+            });
+
+        });
+    </pre>
+    
+     <p>Ajax: </p>
+     
+     <pre>
+     
+     "use strict";
+        $(document).ready(function(){
+
+            $('#btn').click(function(){
+
+                $.ajax({
+
+                    url: 'pagina.html',
+                    method: 'GET',
+                    success: function(dados){
+                        $('#resultados').html(dados);
+                    }
+
+                });
+
+            });
+
+        });
+     </pre>
+    
+    </aside>
+    
+    <aside>
+        <h1>Aula 4.25 Menu de contexto</h1>
+        
+        Exemplos:
+        
+        <pre>
+            "use sctrict";
+            $(document).ready(function(){
+
+                $('#box').contextmenu(function(e){
+
+                    e.preventDefault();
+
+                    $('#menuContexto').toggle('fast').css({
+                        top: e.pageY + 'px',
+                        left: e.pageX + 'px'
+                    })
+                    .mousedown(function(e){
+                        e.stopPropagation();
+                    })
+                    .click(function(e){
+                        $('#menuContexto').hide('fast');
+                    })
+                    ;
+
+
+                    $(document)
+                    .contextmenu(function(e){
+                        e.preventDefault();
+                    })
+                    .mousedown(function(e){
+                        if(e.target)
+                        $('#menuContexto').hide('fast');
+                    });
+                });
+            }); 
+        
+        </pre>
+        
+        Exemplo com switch case e atualização de texto na caixa:
+        
+        <pre>
+        
+        "use sctrict";
+        $(document).ready(function(){
+
+            $('#box').contextmenu(function(e){
+
+                e.preventDefault();
+
+                $('#menuContexto').toggle('fast').css({
+                    top: e.pageY + 'px',
+                    left: e.pageX + 'px'
+                })
+                .mousedown(function(e){
+                    e.stopPropagation();
+                })
+                .click(function(e){
+                    $('#menuContexto').hide('fast');
+                })
+                ;
+
+
+                $('#menuContexto button').click(function(e){
+                    switch($(this).attr('data-menu')){
+                        case 'cut':
+                            $('#box').html('Recortar');
+                            break;
+                        case 'copy':
+                            $('#box').html('Copiar');
+                            break;
+                        case 'paste':
+                            $('#box').html('Colar');
+                            break;
+                    }
+                })
+
+
+                $(document)
+                .contextmenu(function(e){
+                    e.preventDefault();
+                })
+                .mousedown(function(e){
+                    if(e.target)
+                    $('#menuContexto').hide('fast');
+                });
+            });
+        });
+        </pre>
+        
+    </aside>
+    
+    
+    </body>
+</html>

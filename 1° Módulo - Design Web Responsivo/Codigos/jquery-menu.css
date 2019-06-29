@@ -1,0 +1,14 @@
+#box{
+    width: 300px;
+    height: 200px;
+    background-color: crimson;
+    color: white;
+    padding: 5px;
+}
+
+#menuContexto{
+    width: 150px;
+    z-index: 1000px;
+    position: absolute;
+    display: none;
+}

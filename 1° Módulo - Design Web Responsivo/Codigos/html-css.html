@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--Aqui enviamos metadados que fornecem informações de como o navegador deve interpretar essa página -->
+    <title>Textos legais</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Textos legais, W3C, WWW, HTML" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+        body{
+            font-family: Calibri, Arial, sans-serif;
+            font-weight: lighter;
+            font-size: 11pt;            
+            background-color: #222224;
+            color: lightgray;
+        }
+        a{
+            color: deepskyblue;
+        }
+        blockquote{
+            font-family: Satisfy, cursive;
+            font-style: italic;
+            color: dimgray;
+        }
+        #p1, #p2{
+            text-align: justify;
+            line-height: :1.25;
+            text-indent: 2em;
+            background-color: none;
+            border: 2px solid lightgray;
+        }
+        
+        #p1{
+            margin-bottom: 0;
+        }
+        
+        #p2{
+            margin-top: 0;
+        }
+        nav li{
+            display: inline-block;
+        }
+        nav a{
+            display: inline-block;
+            padding: 5px 1em;
+            background-color: lightgray;
+            color: darkslategray;
+        }
+        nav a:hover{
+            background-color: deepskyblue;
+        }
+        nav ul{
+            padding-left: 0;
+        }
+        figure{
+            width: 250px;
+            margin: 0 auto;
+            position: fixed;
+        }
+        figcaption{
+            text-align: center;
+        }
+        #tablePessoas{
+            margin-bottom: 2em;
+            border: 2px dimgray solid;
+            border-collapse: collapse;
+        }
+        #tablePessoas td, #tablePessoas th{
+            border: 2px dimgray solid;
+            padding: 8px 12px;
+        }
+        #tablePessoas th{
+            background-color: gray;
+        }
+        #tablePessoas tfoot tr:first-child td{
+            font-weight: bold;
+        }
+        #tablePessoas tfoot tr:last-child td{
+            border: 0;
+        }
+        #contato label{
+            vertical-align: top;
+            border: thin white solid;
+            display: inline-block;
+            width: 8em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> </h1>
+    <aside>
+     
+    <header> 
+        <h1>Teste </h1>
+        <blockquote cite="http://globoesporte.com"> Colocando um header bem aqui  </blockquote>
+    </header>    
+     
+    <h2>Paragrafos e tags "del", "ins", "var, "dfn"</h2>
+        <!--Quebra de linha. Tome muito cuidado, pois isso não deve ser usado apra formataçãod e texto  -->
+        <br />
+        
+        
+        
+        <figure>
+            <img title="ícone do css 3" src="D:\PUC\1° Módulo\Unidade 02 - Páginas Web\imgs\logo-css.png"/> 
+            <figcaption>Logo do css 3</figcaption> 
+        </figure>
+        
+        <p>"Você pode conhecer vinte caras bonitos e que te entendem muito bem, dez caras legais que cuidam de você como se fosse um diamante precioso, uns outros tantos inteligentes, atraentes, bacanas e engraçados em ordem aleatória. Nenhum deles te encanta. Por que? Falta o tão chamado click, aquele jeito especial que ninguém explica. Pode ser o jeito de mexer no cabelo, a forma como ele te olha, que conversa contigo ou até mesmo um jeito secreto que nem o profeta mais sábio percebe, mas que está lá, você pode ver. </p>
+        <!--Quebra de linha. Tome muito cuidado, pois isso não deve ser usado apra formataçãod e texto  -->
+        <br />
+        <p>Entre tantos milhares,<del>talvez um ou outro se salve</del> <ins>talvez nenhum se salve </ins> ao filtro do ‘jeito’, e daí você percebe: é esse que eu quero abraçar e não largar mais, com quem eu <dfn>organic food </dfn>quero me enrolar embaixo de <var>cobertores </var> e com quem eu quero dividir todos meus segredos. Baseado no que? Num jeito inexplicável ao resto do mundo"</p>
+    </aside>
+        
+    <aside>
+        <h2> Textos sublinhados e tag "pre"</h2>
+        <p> Aqui um exemplo para deixar textos ou caracteres sublinhados: H<sub>2</sub>O</p>
+
+        Uma tag legal é a pre. Esta tag já vem com uma formatação que respeita espaços e quebras de linha, vide exemplo de while abaixo:
+        <pre>
+            var i=8;
+            while(i&lt;10){
+                i++;
+                console.log(i);
+            }
+        </pre>
+    </aside>
+    
+     <aside>
+         <h2> Listas </h2>
+     
+        <pre>
+            Lista ordenada:
+        </pre>
+    
+        Uma lista ordenada é definida pelo elemento "ol" e possui alguns tipos de marcadores como: I, 1, A, a ou i
+
+        Tipo romano:
+        <ol type="I">
+            <li> <p> item a </p> </li>
+            <li> item b</li>
+            <li> item c</li>
+            <li> item d</li>
+            <li> item e</li>
+            <li> item f</li>
+        </ol>
+        Letras maiúsculas:
+        <ol type="A">
+            <li> item a</li>
+            <li> item b</li>
+            <li> item c</li>
+            <li> item d</li>
+            <li> item e</li>
+            <li> item f</li>
+        </ol>
+        Lista com links:
+        <ol type="a">
+            <li><a href="http://www.youtube.com" target="_blank">youtube</a></li>
+            <li> <a href="http://www.google.com.br" target="_blank">google</a></li>
+            <li> <a href="http://www.globo.com" target="_blank">globo.com</a></li>
+            <li> <a href="http://www.globoesporte.com" target="_blank">globo esporte</a></li>
+        </ol>
+
+        <pre>
+            Lista de descrição:
+        </pre>
+    
+        Uma lista de descrição é definida pelo tipo dl e contém grupos de nomes e valores. Mais usada como um dicionário, ou até mesmo um FAQ de perguntas e respostas
+
+        <dl>
+            <dt>WWW</dt> <dd>World Wide Web</dd>
+            <dt>HTTP</dt> <dd>Hyper Text TRansfer Protocol</dd>
+        </dl>
+
+        <dl>
+            <dt>O que é azul</dt> <dd>Azul pode ser uma cor</dd>
+        </dl>
+    </aside>
+    
+    <aside>
+        Um dt pode ter mais de um dd, exemplo:
+    
+        <h2>Elenco de Batman x Superman</h2>
+        <dl>
+            <dt>Ben Affleck</dt><dd>Batman</dd><dd>Bruce Wayne</dd>
+            <dt>Henry Cavill</dt><dd>Superman</dd><dd>Clark Kent</dd>
+        </dl>
+    </aside>
+
+    <nav>
+        <pre>
+            Lista não ordenada:
+        </pre>
+        Uma lista não ordenada é definida pelo elemento "ul" e não possui tipo de marcadores.
+        Essa lista não ordenada de links virou um menu com botões e alguns efeitos interessantes do css.
+        
+        <p>Efeitos usados:</p>
+        
+        <pre>
+            nav li{
+                display: inline-block;
+            }
+            nav a{
+                display: inline-block;
+                padding: 5px 1em;
+                background-color: lightgray;
+                color: darkslategray;
+            }
+            nav a:hover{
+                background-color: deepskyblue;
+            }
+            nav ul{
+                padding-left: 0;
+            } 
+        </pre>
+        
+        <ul>
+            <li> <a href="http://www.youtube.com" target="_blank">youtube</a></li>
+            <li> <a href="http://www.google.com.br" target="_blank">google</a></li>
+            <li> <a href="http://www.globo.com" target="_blank">globo.com</a></li>
+            <li> <a href="http://www.globoesporte.com" target="_blank">globo esporte</a></li>
+        </ul>
+    
+    </nav>
+     
+    <aside>
+        <h3>Imagens:</h3>
+        
+        <img title="ícone do css 3" src="D:\PUC\1° Módulo\Unidade 02 - Páginas Web\imgs\logo-css.png"/>
+     
+        <p>Imagens inseridas por meio de html devem fazer parte do conteúdo. Caso não faça, devem ser inseridas pelo css. Exemplo:</p>
+        
+        Exemplo de imagem com figure:    
+    
+        <figure>
+            <img title="ícone do css 3" src="D:\PUC\1° Módulo\Unidade 02 - Páginas Web\imgs\logo-css.png"/> 
+            <figcaption>Logo do css 3</figcaption> 
+        </figure>
+    
+    </aside>
+    
+     <aside>
+        <h3> Posicionamento</h3>
+        <p>Existem três esquemas de posicionamento:</p>
+        <p>Normal flow: elementos de nivel de paragrafo em formatação de bloco e caixas inline.</p>
+        <p>Floats: são caixas flutuantes. Não se usa o atributo position e sim o float</p>
+        <p>Absolute positioning: fixa a imagem nas posições. exemplo feito com a imagem do css</p>
+    </aside>    
+    
+    <aside>
+        <h3>Tabelas</h3>
+        Em hipótese alguma utilize tables para formatação de dados na tela, isso pode gerar problemas ao abrir o conteúdo em outros navegadores, celulares tables etc.
+        
+        <table id="tablePessoas">
+            <caption> 6 Países mais populosos</caption>    
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>País</th>
+                    <th>Quantidade de pessoas</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>China</td>
+                    <td>1,388,232,693</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Índia</td>
+                    <td>1,342,512,706</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Estados Unidos</td>
+                    <td>326,474,013</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Indonésia</td>
+                    <td>263,510,146</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Brasil</td>
+                    <td>211,243,220</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Paquistão</td>
+                    <td>196,744,376</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td>10.000.000.000</td>
+                </tr>
+            </tfoot>
+        </table>
+    </aside>
+    
+    <aside>
+        <h3>Formulários</h3>
+        
+        <form id="contato">
+            <fieldset>
+                <legend>Mensagem</legend>
+                <p>
+                    <label for="nome">Nome: </label>
+                    <input id="nome" type="text" size="40" placeholder="Digite seu nome"/>
+                </p>
+                <p>
+                    <label for="email">Email: </label>
+                    <input id="email" type="text" size="40" placeholder="Digite seu email"/>
+                </p>
+                <p>
+                    <label for="mensagem">Mensagem</label>
+                    <textarea rows="10" placeholder="Digite sua mensagem"></textarea>
+                </p>
+            </fieldset>
+            <p>
+                <input type="button" value="Enviar Dados" />
+            </p>
+        </form>
+    
+    
+    </aside>
+    
+    <aside>
+    
+        <iframe width="280" height="167" src="https://www.youtube.com/watch?v=M76qUQTt_Sw&list=RDMMM76qUQTt_Sw&start_radio=1"></iframe>
+        
+    </aside>
+    
+    <footer>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        Organização do conteúdo de uma página em seções:
+    
+        Div é uma seçãos em significado, sem semântica associada. Caso for fazer formatação, use div. Se não, use section.
+    
+        Link muito útil para verificar e organizar as seções:
+        
+        <addres><a href="https://gsnedders.html5.org/outliner/" target="_blank">gsnedders.html5.org/outliner/</a> </addres> 
+    </footer>
+        
+</body>
+
+</html>

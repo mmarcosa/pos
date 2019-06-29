@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aulas CSS </title>
+</head>
+
+<body>
+
+    <h1> Cascade Style Sheets </h1>
+
+    <aside>
+        Define um conjunto de regras de estilo que permitem a apresentação do conteúdo
+
+        Estrutura:
+
+        <pre>
+                seletor{
+                    propriedade1: valor1
+                    propriedade2: valor2
+                    propriedade3: valor3
+                }
+            </pre>
+
+        Exemplo prático de alteração de títuloo h1:
+
+        <pre>
+                h1{
+                    font-family: Arial;
+                    font-size: 16pt;
+                    font-weight: bold;
+                }
+            </pre>
+
+    </aside>
+
+
+    <aside>
+        <h3>Vantagens da formatação com CSS</h3>
+        <ul>
+            <li>Formatação de vários elementos;</li>
+            <li>Reaproveitamento da formatação em várias páginas;</li>
+            <li>Facilicade de manutenção do conteúdo e da fomatação;</li>
+            <li>Aplicação de diferentes estilos;</li>
+
+        </ul>
+    </aside>
+
+    <aside>
+        Pode-se incorporar o css por três maneiras:
+
+        <p>Link: use a tag link e faça o import do arquivo .css</p>
+        <p>Style: use a tag style e faça um css dentro do formulário;</p>
+        <p>No próprio html: nãoi use isso ..</p>
+
+    </aside>
+
+    <aside>
+
+
+        Aplicar a mais de um seletor:
+        <pre>
+        p, ul{  
+            background-color: yellow;
+        }
+        
+        h2{
+            background-color: green;
+        }
+        </pre>
+        Aplicar a um filho de um seletor:
+
+        <pre>
+        li p{
+            background-color: gray;
+        }
+        
+        header{
+            font-family: sans-serif;
+        }
+        
+        blockquote{
+            background-color: red;
+        }
+        
+        footer{
+            font-size: smaller;
+        }
+        </pre>
+
+        Aplicar a todos:
+        <pre>
+        *{
+           background-color: blue;
+        }
+        
+        </pre>
+    É possível pegar pseudo elementos, por exemplo a primeira letra de um parágrafo:
+        <pre>
+        p::first-letter{
+            font-size: 30pt;    
+        }
+        </pre>
+    </aside>
+    
+    <aside>
+    <h3> Seletor de identificador</h3>
+        
+        <p>atribua um id a um seletor e faça o estilo desse identificador.      
+        Exemplo:</p>
+        
+        <pre>
+            #username{
+                font-size: 30pt; 
+            }    
+        </pre>
+
+    </aside>
+    
+    <aside>
+        <h3> Formatação de texto</h3>
+        <h4> Formatação de fontes</h4>
+        
+        
+        <pre>
+            body{
+                font-family: calibri, Arial, sans-serif;
+                font-weight: bold;     --> basicamente indica se é negrito
+            }
+        </pre>
+        
+        O exemplo acima fala que caso o navegador não encontre a calibri, arial pode ser usada.
+        
+    </aside>
+    
+    <aside>
+        <h3> Modelos de caixa</h3>
+        
+        Ao redor do conteúdo há uma borda. 
+        
+        Vamos mexer com essas propriedades (margem interna, externa e propriedades da borda) para vermos mais sobre o assunto.
+        
+        
+        <p> Exemplos de formatação de margens de paragrafo</p>
+        <pre>
+        
+        p{
+            text-align: justify;
+            line-height: :1.25;
+            text-indent: 2em;
+            background-color: darkmagenta;
+            border: 2px solid chartreuse;
+        }
+        
+        #p1{
+            margin-bottom: 0, 1em;   --> primeiro pra cima, segundo pra baixo
+        }
+        
+        #p2{
+            margin-top: 0, 1em, 2em; --> primeiro pra cima, segundo para os lados terceiro pra baixo
+        }
+        
+        #p2{
+            margin-top: 0, 1em, 3em, 2em; --> segue o sentido horário
+        }
+        
+        </pre>
+        
+        <p> a borda pode ser especidicada através de trÊs plropkriedades:</p>
+        
+        <pre>
+        p{
+            border-style: solid;
+            border-width: thin;
+            border-color: chartreuse;
+        }
+        </pre>
+        
+        <pre>
+        Esses três parâmetros podem ser trocados por uma única declaração:
+        
+        p{
+            border: solid thin chartreuse;
+        }
+        </pre>
+        
+        Além de ser possível inúmer6as declarações como border-top, border-bottom etc.
+
+    </aside>
+</body>
+
+</html>

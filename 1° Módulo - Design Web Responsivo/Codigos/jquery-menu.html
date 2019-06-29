@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>jQuery</title>
+        <meta charset="utf8-" />
+        <script src="jquery-2.2.3.min.js"></script>
+        <script src="jquery-menu.js"></script>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="jquery-menu.css" rel="stylesheet" />
+    </head>
+    <body class="container">
+        <h1>Menu de contexto</h1>
+        <p>Clique na caixa com o botão direito</p>
+        
+        <div id="box">
+            <h1>Texto</h1>
+        </div> 
+        
+        <!-- Menu de contexto -->
+        <ul id = "menuContexto" class="list-group">
+            <button class="list-group-item" data-menu="cut">
+                <span class="glyphicon glyphicon-scissors"></span>
+                Recortar
+            </button>
+            
+            <button class="list-group-item" data-menu="copy">
+                 <span class="glyphicon glyphicon-copy"></span>
+                Copiar
+            </button>
+            
+            <button class="list-group-item" data-menu="paste">
+                 <span class="glyphicon glyphicon-paste"></span>
+                Colar
+            </button>
+        </ul>
+        
+    </body>
+</html>   

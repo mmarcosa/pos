@@ -1,0 +1,17 @@
+#box{
+    width: 150 px;
+    height: 200px;
+    background-color: crimson;
+    
+}
+
+#box2{
+    width: 50 px;
+    height: 50px;
+    background-color: green;
+    margin: 20px 10px
+}
+
+#painel{
+    margin-top: 2em;    
+}
